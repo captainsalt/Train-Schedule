@@ -1,0 +1,25 @@
+﻿h1 {
+    text-align: center;
+}
+
+th,
+td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 97%;
+}
+
+#trainTable {
+    border-collapse: collapse;
+    font-family: arial, sans-serif;
+    width: 100%;
+}
