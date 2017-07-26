@@ -35,12 +35,13 @@ function updateTrainTable(data) {
     //empty all of the train info
     $(".train").empty();
 
-    //return if database is empty
-    if (data === null) 
-        return;
-
     var table = $("#trainTable");
-    var keys = Object.keys(data.val());
+
+    try {
+        var keys = Object.keys(data.val());
+    } catch (error) { //ignore errors if databse is null
+        return;
+    }
 
     //For every train
     keys.forEach(e => {
@@ -48,6 +49,7 @@ function updateTrainTable(data) {
         var tableRow = $("<tr class=\"train\">");
 
         addOrderedTrainToTable();
+        
         //after you get all of the trains data append it to the main table
         table.append(tableRow);
 
