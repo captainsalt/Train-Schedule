@@ -37,6 +37,7 @@ function updateTrainTable(data) {
 
     var table = $("#trainTable");
 
+    //using a trycatch block to quiet annoying errors
     try {
         var keys = Object.keys(data.val());
     } catch (error) { //ignore errors if databse is null
@@ -69,5 +70,5 @@ function updateTrainTable(data) {
 }
 
 function errorHandler(err) {
-    console.log(`An error has occured; ${err}`);
+    console.log(`An error has occured;\n${err}`);
 }

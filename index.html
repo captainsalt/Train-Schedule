@@ -29,13 +29,45 @@
                 <th>Next Arrivial</th>
                 <th>Minutes Away</th>
             </tr>
-        
+
         </table>
 
-        <!-- Add Train -->
-        <div>
+        <!-- Add a train -->
+        <form id="trainForm">
+            <div>
+                <label>Name</label>
+                <br>
+                <input id="nameText" type="text" value="">
+            </div>
 
-        </div>
+            <div>
+                <label>Destination</label>
+                <br>
+                <input id="destinationText" type="text" value="">
+            </div>
+
+            <div>
+                <label>Frequency</label>
+                <br>
+                <input id="freqText" type="text" value="">
+            </div>
+
+            <div>
+                <label>Next Arrival</label>
+                <br>
+                <input id="arrivalText" type="text" value="">
+            </div>
+
+            <div>
+                <label>Minutes Away</label>
+                <br>
+                <input id="minutesAwayText" type="text" value="">
+            </div>
+
+            <br>
+
+            <button id="submitButton" type="submit">Submit</button>
+        </form>
     </div>
 
     <script type="text/javascript" src="assets/scripts/firebase.js"></script>
