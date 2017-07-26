@@ -31,13 +31,21 @@ function addTrain(trainName, destination, frequency, nextArrival, minutesAway) {
 
 //Updates the train table when data is aded or removed from the database
 function updateTrainTable(data) {
-    var keys = Object.keys(data.val());
+
+    //empty all of the train info
+    $(".train").empty();
+
+    //return if database is empty
+    if (data === null) 
+        return;
+
     var table = $("#trainTable");
+    var keys = Object.keys(data.val());
 
     //For every train
     keys.forEach(e => {
         var train = data.val()[e];
-        var tableRow = $("<tr>");
+        var tableRow = $("<tr class=\"train\">");
 
         addOrderedTrainToTable();
         //after you get all of the trains data append it to the main table
