@@ -36,32 +36,36 @@
         </div>
 
         <!-- Add a train -->
-        <form id="trainForm" class="panel panel-primary">
-             <div>
-                <label>Name</label>
-                <br>
-                <input id="nameText" type="text" value="">
-            </div> 
+        <form class="panel panel-primary">
+            <div class="panel-heading">Add a train here</div>
 
-            <div>
-                <label>Destination</label>
-                <br>
-                <input id="destinationText" type="text" value="">
+            <div id="trainForm">
+                <div>
+                    <label>Name</label>
+                    <br>
+                    <input id="nameText" type="text" value="">
+                </div>
+
+                <div>
+                    <label>Destination</label>
+                    <br>
+                    <input id="destinationText" type="text" value="">
+                </div>
+
+                <div>
+                    <label>Frequency</label>
+                    <br>
+                    <input id="freqText" type="number" value="">
+                </div>
+
+                <div>
+                    <label>Next Arrival</label>
+                    <br>
+                    <input id="arrivalText" type="datetime-local" value="">
+                </div>
+
+                <button id="submitButton" class="btn btn-default" type="submit">Submit</button>
             </div>
-
-            <div>
-                <label>Frequency</label>
-                <br>
-                <input id="freqText" type="number" value="">
-            </div>
-
-            <div>
-                <label>Next Arrival</label>
-                <br>
-                <input id="arrivalText" type="datetime-local" value="">
-            </div>
-
-            <button id="submitButton" class="btn btn-default" type="submit">Submit</button>
         </form>
     </div>
 
