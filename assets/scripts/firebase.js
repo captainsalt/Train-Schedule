@@ -12,6 +12,7 @@ function loginToDatabase() {
 
     firebase.initializeApp(config);
     database = firebase.database();
+    database.ref().on("value", updateTrainTable, errorHandler);
 }
 
 /**
@@ -20,16 +21,10 @@ function loginToDatabase() {
 function addTrain(trainName, destination, frequency, nextArrival) {
     var nextArrival = new Date(nextArrival);
     var minutesAway = Math.ceil(new Date(nextArrival - new Date()).getTime() / 60000);
-    
-    //convert after checks
-    var options = {
-        weekday: "short", year: "numeric", month: "short",
-        day: "numeric", hour: "2-digit", minute: "2-digit"
-    }; 
-    nextArrival = nextArrival.toLocaleDateString("en-US", options);
 
-    console.log(minutesAway, nextArrival);
-    
+    //Humanizes the time
+    nextArrival = timeHumanizer(nextArrival);
+
     var data = {
         TrainName: trainName,
         Destination: destination,
@@ -61,7 +56,7 @@ function updateTrainTable(data) {
         var tableRow = $("<tr class=\"train\">");
 
         addOrderedTrainToTable();
-        
+
         //after you get all of the trains data append it to the main table
         table.append(tableRow);
 
