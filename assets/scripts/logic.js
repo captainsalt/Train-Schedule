@@ -22,9 +22,15 @@
         var dest = $("#destinationText").val();
         var freq = $("#freqText").val();
         var nextArrival = $("#arrivalText").val();
-        var minAway = $("#minutesAwayText").val();
+
+        //checks to see if users train arrives in the past
+        var arrivalDate = new Date(nextArrival);
+        if (arrivalDate < new Date()) {
+            alert("Cannot make a train that arrives in the past");
+            return;
+        }
 
         //adds train to database
-        addTrain(name, dest, freq, nextArrival, minAway);
+        addTrain(name, dest, freq, arrivalDate);
     });
 });

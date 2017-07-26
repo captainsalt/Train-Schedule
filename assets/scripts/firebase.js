@@ -17,7 +17,19 @@ function loginToDatabase() {
 /**
  * Add a train to the database
  */
-function addTrain(trainName, destination, frequency, nextArrival, minutesAway) {
+function addTrain(trainName, destination, frequency, nextArrival) {
+    var nextArrival = new Date(nextArrival);
+    var minutesAway = Math.ceil(new Date(nextArrival - new Date()).getTime() / 60000);
+    
+    //convert after checks
+    var options = {
+        weekday: "short", year: "numeric", month: "short",
+        day: "numeric", hour: "2-digit", minute: "2-digit"
+    }; 
+    nextArrival = nextArrival.toLocaleDateString("en-US", options);
+
+    console.log(minutesAway, nextArrival);
+    
     var data = {
         TrainName: trainName,
         Destination: destination,
@@ -25,7 +37,6 @@ function addTrain(trainName, destination, frequency, nextArrival, minutesAway) {
         NextArrival: nextArrival,
         MinutesAway: minutesAway
     }
-
     database.ref().push(data);
 }
 
