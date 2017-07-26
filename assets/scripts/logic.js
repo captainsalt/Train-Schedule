@@ -10,12 +10,13 @@
         for (var i = 0; i < inputs.length; i++) {
             var input = $(inputs[i]);
             
-            if (!input.val()) {
+            if (!input.val()) { 
                 alert("One or more values are null");
                 return;
             }
         }
 
+        //making variables to store input text
         var name = $("#nameText").val();
         var dest = $("#destinationText").val();
         var freq = $("#freqText").val();

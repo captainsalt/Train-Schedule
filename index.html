@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>
-        Train Scheduler 
+        Train Scheduler
     </title>
 
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
@@ -20,25 +20,28 @@
         <!-- Title -->
         <h1>Trains</h1>
 
-        <!-- Train table -->
-        <table id="trainTable">
-            <tr>
-                <th>Train Name</th>
-                <th>Destination</th>
-                <th>Frequency</th>
-                <th>Next Arrivial</th>
-                <th>Minutes Away</th>
-            </tr>
+        <div class="panel panel-primary">
+            <div class="panel-heading">Train Information</div>
 
-        </table>
+            <table id="trainTable" class="table">
+                <tr>
+                    <th>Train Name</th>
+                    <th>Destination</th>
+                    <th>Frequency</th>
+                    <th>Next Arrivial</th>
+                    <th>Minutes Away</th>
+                </tr>
+
+            </table>
+        </div>
 
         <!-- Add a train -->
-        <form id="trainForm">
-            <div>
+        <form id="trainForm" class="panel panel-primary">
+             <div>
                 <label>Name</label>
                 <br>
                 <input id="nameText" type="text" value="">
-            </div>
+            </div> 
 
             <div>
                 <label>Destination</label>
@@ -58,7 +61,7 @@
                 <input id="arrivalText" type="datetime-local" value="">
             </div>
 
-            <button id="submitButton" type="submit">Submit</button>
+            <button id="submitButton" class="btn btn-default" type="submit">Submit</button>
         </form>
     </div>
 

@@ -2,15 +2,17 @@
     text-align: center;
 }
 
-th,
-td {
-    border: 1px solid #dddddd;
-    padding: 8px;
-    text-align: left;
+body {
+    background: url("..\\images\\cloudy-day.png");
 }
 
-tr:nth-child(even) {
-    background-color: #eee;
+th,
+td {
+    padding: 10px;
+}
+
+th {
+    font-weight: bold;
 }
 
 .wrapper {
@@ -19,7 +21,6 @@ tr:nth-child(even) {
 }
 
 #trainTable {
-    border-collapse: collapse;
     font-family: arial, sans-serif;
     width: 100%;
 }
@@ -27,15 +28,21 @@ tr:nth-child(even) {
 #trainForm {
     margin: 10px 0;
     width: 100%;
-    padding: 5px;
-    border: 1px solid #ddd;
+    padding: 10px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-gap: 10px;
+    grid-gap: 15px;
 }
 
 #trainForm input {
     width: 100%;
-    padding: 0 1px;
+    padding: 0 3px;
+    border-radius: 3px;
+    border: 1px solid steelblue;
+}
+
+#trainForm button {
+    grid-column: span 2;
+    border: 1px solid steelblue;
 }
