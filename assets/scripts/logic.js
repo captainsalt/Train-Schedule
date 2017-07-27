@@ -1,5 +1,6 @@
 ﻿$(document).ready(() => {
     loginToDatabase();
+    setInterval(updateTrainTime, 300);
 
     //Submits the train to the database
     $("#submitButton").click(() => {
@@ -10,12 +11,13 @@
         for (var i = 0; i < inputs.length; i++) {
             var input = $(inputs[i]);
             
-            if (!input.val()) {
+            if (!input.val()) { 
                 alert("One or more values are null");
                 return;
             }
         }
 
+        //making variables to store input text
         var name = $("#nameText").val();
         var dest = $("#destinationText").val();
         var freq = $("#freqText").val();
@@ -32,3 +34,16 @@
         addTrain(name, dest, freq, arrivalDate);
     });
 });
+
+function updateTrainTime() {
+    var train = $(".train").get();
+
+    for (var i = 0; i < train.length; i++) {
+        var row = $(train[i]);
+
+        var trainTimeString = $(row.children()[3]).html();
+        var minutes = $(row.children()[4]);
+
+        minutes.html(getTotalMinutesFromNow(trainTimeString));
+    }
+}

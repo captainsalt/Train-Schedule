@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>
-        Train Scheduler 
+        Train Scheduler
     </title>
 
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
@@ -20,45 +20,52 @@
         <!-- Title -->
         <h1>Trains</h1>
 
-        <!-- Train table -->
-        <table id="trainTable">
-            <tr>
-                <th>Train Name</th>
-                <th>Destination</th>
-                <th>Frequency</th>
-                <th>Next Arrivial</th>
-                <th>Minutes Away</th>
-            </tr>
+        <div class="panel panel-primary">
+            <div class="panel-heading">Train Information</div>
 
-        </table>
+            <table id="trainTable" class="table">
+                <tr>
+                    <th>Train Name</th>
+                    <th>Destination</th>
+                    <th>Frequency</th>
+                    <th>Next Arrivial</th>
+                    <th>Minutes Away</th>
+                </tr>
+
+            </table>
+        </div>
 
         <!-- Add a train -->
-        <form id="trainForm">
-            <div>
-                <label>Name</label>
-                <br>
-                <input id="nameText" type="text" value="">
-            </div>
+        <form class="panel panel-primary">
+            <div class="panel-heading">Add a train here</div>
 
-            <div>
-                <label>Destination</label>
-                <br>
-                <input id="destinationText" type="text" value="">
-            </div>
+            <div id="trainForm">
+                <div>
+                    <label>Name</label>
+                    <br>
+                    <input id="nameText" type="text" value="">
+                </div>
 
-            <div>
-                <label>Frequency</label>
-                <br>
-                <input id="freqText" type="number" value="">
-            </div>
+                <div>
+                    <label>Destination</label>
+                    <br>
+                    <input id="destinationText" type="text" value="">
+                </div>
 
-            <div>
-                <label>Next Arrival</label>
-                <br>
-                <input id="arrivalText" type="datetime-local" value="">
-            </div>
+                <div>
+                    <label>Frequency</label>
+                    <br>
+                    <input id="freqText" type="number" value="">
+                </div>
 
-            <button id="submitButton" type="submit">Submit</button>
+                <div>
+                    <label>Next Arrival</label>
+                    <br>
+                    <input id="arrivalText" type="datetime-local" value="">
+                </div>
+
+                <button id="submitButton" class="btn btn-default" type="submit">Submit</button>
+            </div>
         </form>
     </div>
 
