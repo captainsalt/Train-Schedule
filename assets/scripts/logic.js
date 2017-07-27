@@ -1,5 +1,6 @@
 ﻿$(document).ready(() => {
     loginToDatabase();
+    setInterval(updateTrainTime, 300);
 
     //Submits the train to the database
     $("#submitButton").click(() => {
@@ -33,3 +34,16 @@
         addTrain(name, dest, freq, arrivalDate);
     });
 });
+
+function updateTrainTime() {
+    var train = $(".train").get();
+
+    for (var i = 0; i < train.length; i++) {
+        var row = $(train[i]);
+
+        var trainTimeString = $(row.children()[3]).html();
+        var minutes = $(row.children()[4]);
+
+        minutes.html(getTotalMinutesFromNow(trainTimeString));
+    }
+}
