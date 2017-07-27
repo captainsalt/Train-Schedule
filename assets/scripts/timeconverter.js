@@ -1,22 +1,7 @@
-var timeFormat = "ddd[,] MMM Do [at] HH:mm a";
-
-function timeHumanizer(time) {
-    var options = {
-        weekday: "short",
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-        hour: "2-digit",
-        minute: "2-digit"
-    };
-
-    var convertedTime = time.toLocaleDateString("en-US", options);
-
-    return convertedTime;
-}
+var momentTimeFormat = "ddd[,] MMM Do [at] HH:mm a";
 
 function formatTime(time) {
-    time = moment(new Date(time)).format(timeFormat);
+    time = moment(new Date(time)).format(momentTimeFormat);
     return time;
 }
 
