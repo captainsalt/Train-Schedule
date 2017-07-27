@@ -33,11 +33,10 @@ function addTrain(trainName, destination, frequency, nextArrival) {
 
 //Updates the train table when data is aded or removed from the database
 function updateTrainTable(data) {
-
+    var table = $("#trainTable");
+    
     //empty all of the train info
     $(".train").empty();
-
-    var table = $("#trainTable");
 
     //using a trycatch block to quiet annoying errors
     try {
@@ -65,7 +64,7 @@ function updateTrainTable(data) {
          */
         function addOrderedTrainToTable() {
             //Desired order of the trains properties on the table
-            var order = ["TrainName", "Destination", "Frequency", "NextArrival", "MinutesAway"]
+            var order = ["TrainName", "Destination", "Frequency", "NextArrival", "MinutesAway"];
 
             //adding the properties in order
             for (var i = 0; i < order.length; i++)
