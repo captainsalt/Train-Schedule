@@ -53,6 +53,9 @@ function updateTrainTable(data) {
         var train = data.val()[e];
         var tableRow = $("<tr class=\"train\">");
 
+        //add the key to the tables data
+        tableRow.data("key", e);
+
         addOrderedTrainToTable();
 
         //after you get all of the trains data append it to the main table

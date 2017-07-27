@@ -10,8 +10,8 @@
         //Loops through inputs and returns if one of them is null or empty
         for (var i = 0; i < inputs.length; i++) {
             var input = $(inputs[i]);
-            
-            if (!input.val()) { 
+
+            if (!input.val()) {
                 alert("One or more values are null");
                 return;
             }
@@ -37,16 +37,28 @@
 
 function updateTrainTime() {
     var train = $(".train").get();
+    var format = "ddd[,] MMM Do [at] HH:mm a";
 
     for (var i = 0; i < train.length; i++) {
         var row = $(train[i]);
 
-        var trainTimeString = $(row.children()[3]).html();
+        var trainTime = $(row.children()[3]);
+        var frequencyTimeString = $(row.children()[2]).html();
         var minutes = $(row.children()[4]);
 
-        var totalMinutes = getTotalMinutesFromNow(trainTimeString);
-        var totalDisplay = (totalMinutes < 0) ?  "Arrived" : totalMinutes;
+        //If the traintime hasn't loaded yet go on to the next train
+        if (!trainTime.html())
+            continue;
 
-        minutes.html(totalDisplay);
+        var totalMinutes = getTotalMinutesFromNow(moment(trainTime.html(), format));
+
+        if (totalMinutes <= 0) {
+            var momentTime = moment(new Date());
+            var editedTime = momentTime.add(frequencyTimeString, "m").format(format);
+
+            trainTime.html(editedTime);
+            database.ref(`${row.data("key")}/NextArrival`).set(editedTime);
+        } else
+            minutes.html(totalMinutes);
     }
 }
