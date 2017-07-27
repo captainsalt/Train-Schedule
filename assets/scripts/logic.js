@@ -2,7 +2,13 @@
     loginToDatabase();
     setInterval(updateTrainTime, 300);
 
-    //Submits the train to the database
+    //Set default time to today
+    var format = "YYYY-MM-DDThh:mm";
+    $("#arrivalText").val(moment(new Date()).format(format));
+
+    // yyyy - MM - ddThh:mm
+    //2017-07-27T03:02
+    // 2017 - 07 - 27T03: 23
     $("#submitButton").click(() => {
         event.preventDefault();
         var inputs = $("#trainForm div input").get();
