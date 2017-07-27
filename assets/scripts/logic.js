@@ -53,8 +53,8 @@ function updateTrainTime() {
         var totalMinutes = getTotalMinutesFromNow(moment(trainTime.html(), format));
 
         if (totalMinutes <= 0) {
-            var momentTime = moment(new Date());
-            var editedTime = momentTime.add(frequencyTimeString, "m").format(format);
+            var currentTime = moment(new Date());
+            var editedTime = currentTime.add(frequencyTimeString, "m").format(format);
 
             trainTime.html(editedTime);
             database.ref(`${row.data("key")}/NextArrival`).set(editedTime);
