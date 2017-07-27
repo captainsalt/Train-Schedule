@@ -19,10 +19,8 @@ function loginToDatabase() {
  * Add a train to the database
  */
 function addTrain(trainName, destination, frequency, nextArrival) {
-    var nextArrival = new Date(nextArrival);
-
     //Humanizes the time
-    nextArrival = timeHumanizer(nextArrival);
+    nextArrival = formatTime(nextArrival);
 
     var data = {
         TrainName: trainName,

@@ -13,6 +13,13 @@ function timeHumanizer(time) {
     return convertedTime;
 }
 
+function formatTime(time) {
+    var format = "ddd[,] MMM Do [at] HH:mm a";
+
+    time = moment(new Date(time)).format(format);
+    return time;
+}
+
 function getTotalMinutesFromNow(arrival) {
     //check if arrival is of the date data type
     if (typeof arrival.getMonth !== "function")
