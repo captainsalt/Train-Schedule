@@ -43,7 +43,6 @@
 
 function updateTrainTime() {
     var train = $(".train").get();
-    var format = "ddd[,] MMM Do [at] HH:mm a";
 
     for (var i = 0; i < train.length; i++) {
         var row = $(train[i]);
@@ -56,11 +55,11 @@ function updateTrainTime() {
         if (!trainTime.html())
             continue;
 
-        var totalMinutes = getTotalMinutesFromNow(moment(trainTime.html(), format));
+        var totalMinutes = getTotalMinutesFromNow(moment(trainTime.html(), timeFormat));
 
         if (totalMinutes <= 0) {
             var currentTime = moment(new Date());
-            var editedTime = currentTime.add(frequencyTimeString, "m").format(format);
+            var editedTime = currentTime.add(frequencyTimeString, "m").format(timeFormat);
 
             trainTime.html(editedTime);
             database.ref(`${row.data("key")}/NextArrival`).set(editedTime);

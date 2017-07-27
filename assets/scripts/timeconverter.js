@@ -1,3 +1,5 @@
+var timeFormat = "ddd[,] MMM Do [at] HH:mm a";
+
 function timeHumanizer(time) {
     var options = {
         weekday: "short",
@@ -14,9 +16,7 @@ function timeHumanizer(time) {
 }
 
 function formatTime(time) {
-    var format = "ddd[,] MMM Do [at] HH:mm a";
-
-    time = moment(new Date(time)).format(format);
+    time = moment(new Date(time)).format(timeFormat);
     return time;
 }
 
