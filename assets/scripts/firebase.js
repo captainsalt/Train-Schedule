@@ -20,7 +20,6 @@ function loginToDatabase() {
  */
 function addTrain(trainName, destination, frequency, nextArrival) {
     var nextArrival = new Date(nextArrival);
-    var minutesAway = Math.ceil(new Date(nextArrival - new Date()).getTime() / 60000);
 
     //Humanizes the time
     nextArrival = timeHumanizer(nextArrival);
