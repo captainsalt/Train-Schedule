@@ -44,6 +44,9 @@ function updateTrainTime() {
         var trainTimeString = $(row.children()[3]).html();
         var minutes = $(row.children()[4]);
 
-        minutes.html(getTotalMinutesFromNow(trainTimeString));
+        var totalMinutes = getTotalMinutesFromNow(trainTimeString);
+        var totalDisplay = (totalMinutes < 0) ?  "Arrived" : totalMinutes;
+
+        minutes.html(totalDisplay);
     }
 }
