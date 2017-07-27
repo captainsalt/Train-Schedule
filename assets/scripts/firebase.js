@@ -29,7 +29,6 @@ function addTrain(trainName, destination, frequency, nextArrival) {
         Destination: destination,
         Frequency: frequency,
         NextArrival: nextArrival,
-        MinutesAway: minutesAway
     }
     database.ref().push(data);
 }
