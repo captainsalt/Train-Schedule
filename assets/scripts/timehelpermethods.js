@@ -1,4 +1,4 @@
-var momentTimeFormat = "ddd[,] MMM Do [at] HH:mm a";
+var momentTimeFormat = "ddd[,] MMM Do [at] HH:mm";
 
 function formatTime(time) {
     time = moment(new Date(time)).format(momentTimeFormat);
